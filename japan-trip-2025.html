@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2D3E50">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Japan Trip 2025">
     <title>Japan Trip 2025 - Interactive Itinerary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,15 +30,12 @@
             font-family: 'Cormorant Garamond', serif;
             background: linear-gradient(135deg, var(--white) 0%, var(--sakura) 100%);
             min-height: 100vh;
-            line-height: 1.6;
-            -webkit-text-size-adjust: 100%;
-            -webkit-font-smoothing: antialiased;
         }
         
         .app-header {
             background: linear-gradient(135deg, var(--indigo) 0%, #1e2936 100%);
             color: white;
-            padding: 15px;
+            padding: 20px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -57,25 +51,24 @@
             font-family: 'Noto Serif JP', serif;
             font-weight: 300;
             letter-spacing: 0.1em;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
         }
         
         .countdown {
             background: rgba(255,255,255,0.2);
-            padding: 10px;
+            padding: 15px;
             border-radius: 10px;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         
         .countdown-label {
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            font-size: 0.9em;
             opacity: 0.9;
             margin-bottom: 5px;
         }
         
         .countdown-timer {
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: 1.5em;
             font-weight: bold;
         }
         
@@ -84,33 +77,25 @@
             background: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             position: sticky;
-            top: 90px;
+            top: 120px;
             z-index: 90;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-tabs {
-                top: 80px;
-            }
         }
         
         .nav-tab {
             flex: 1;
-            padding: 12px 8px;
+            padding: 15px;
             text-align: center;
             cursor: pointer;
             border: none;
             background: white;
             color: #666;
             font-weight: 500;
-            min-width: 100px;
+            min-width: 120px;
             transition: all 0.3s ease;
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            white-space: nowrap;
+            font-size: 1.1em;
         }
         
         .nav-tab:hover {
@@ -124,16 +109,10 @@
         
         .content-section {
             display: none;
-            padding: 15px;
+            padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
             animation: fadeIn 0.5s ease;
-        }
-        
-        @media (min-width: 768px) {
-            .content-section {
-                padding: 20px;
-            }
         }
         
         .content-section.active {
@@ -142,80 +121,53 @@
         
         .quick-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        @media (min-width: 768px) {
-            .quick-info-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 15px;
-                margin-bottom: 20px;
-            }
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
         }
         
         .quick-card {
             background: white;
             border-radius: 12px;
-            padding: 15px;
+            padding: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
         
-        @media (min-width: 768px) {
-            .quick-card {
-                padding: 20px;
-                gap: 15px;
-            }
-        }
-        
         .quick-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-5px);
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
         
         .quick-icon {
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            flex-shrink: 0;
-        }
-        
-        .quick-text {
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: 2.5em;
         }
         
         .timeline-card {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             animation: slideIn 0.5s ease;
-        }
-        
-        @media (min-width: 768px) {
-            .timeline-card {
-                padding: 25px;
-                margin-bottom: 20px;
-            }
         }
         
         .time-badge {
             display: inline-block;
             background: var(--tea-green);
             color: var(--indigo);
-            padding: 5px 12px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: clamp(0.75rem, 2vw, 0.85rem);
+            font-size: 0.85em;
             font-weight: 600;
             margin-bottom: 10px;
         }
         
         .activity-title {
-            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-size: 1.3em;
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--black);
@@ -224,21 +176,19 @@
         .activity-description {
             color: var(--gray);
             line-height: 1.6;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         
         .day-selector {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             overflow-x: auto;
             padding-bottom: 10px;
             margin-bottom: 20px;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
         }
         
         .day-selector::-webkit-scrollbar {
-            height: 3px;
+            height: 5px;
         }
         
         .day-selector::-webkit-scrollbar-track {
@@ -252,7 +202,7 @@
         }
         
         .day-btn {
-            padding: 8px 16px;
+            padding: 10px 20px;
             border: 2px solid var(--tea-green);
             background: white;
             color: var(--indigo);
@@ -261,8 +211,6 @@
             font-weight: 600;
             white-space: nowrap;
             transition: all 0.3s ease;
-            font-size: clamp(0.8rem, 2vw, 1rem);
-            min-width: 80px;
         }
         
         .day-btn:hover {
@@ -277,836 +225,1469 @@
         
         .day-content {
             display: none;
+            animation: fadeIn 0.5s ease;
         }
         
         .day-content.active {
             display: block;
         }
         
+        .activity-list {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .activity-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-time {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .activity-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 5px;
+        }
+        
+        .activity-location {
+            color: var(--gray);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .hotel-card {
+            background: linear-gradient(135deg, var(--sakura) 0%, #FFD1D1 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .hotel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .hotel-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+        }
+        
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--indigo);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .map-btn:hover {
+            background: #1e2936;
+        }
+        
+        .reservation-alert {
+            background: var(--sakura);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .reservation-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .alert-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+        }
+        
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 20px;
+            margin-top: 15px;
+        }
+        
+        .res-label {
+            font-weight: 600;
+            color: var(--indigo);
+        }
+        
+        .res-value {
+            color: var(--black);
+        }
+        
+        .expense-tracker {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .expense-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .expense-total {
+            font-size: 1.8em;
+            color: var(--indigo);
+            font-weight: bold;
+        }
+        
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .expense-item:last-child {
+            border-bottom: none;
+        }
+        
+        .expense-category {
+            font-weight: 600;
+            color: var(--indigo);
+        }
+        
+        .expense-amount {
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
         .contact-card {
             background: white;
             border-radius: 15px;
             padding: 20px;
-            margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
         }
         
         .contact-row {
             display: flex;
             align-items: center;
             gap: 15px;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--light-gray);
-        }
-        
-        .contact-row:last-child {
-            border-bottom: none;
+            padding: 10px 0;
         }
         
         .contact-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        
-        .floating-action {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--indigo);
-            color: white;
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
+            background: var(--tea-green);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            color: var(--indigo);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .floating-action {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--gold);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.4);
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
             z-index: 1000;
-            transition: all 0.3s ease;
         }
         
         .floating-action:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        .accommodation-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: var(--light-gray);
-            border-radius: 10px;
-        }
-        
-        .accommodation-item h3 {
-            color: var(--indigo);
-            margin-bottom: 10px;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-        }
-        
-        .accommodation-item p {
-            margin-bottom: 5px;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-        }
-        
-        .breakfast-note {
-            background: var(--tea-green);
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-top: 8px;
-            font-size: 0.9em;
-            color: var(--indigo);
-            font-weight: 500;
-        }
-        
-        /* Enhanced mobile styles */
-        @media (max-width: 480px) {
-            .app-header {
-                padding: 10px;
+        @media (max-width: 768px) {
+            .nav-tabs {
+                top: 140px;
             }
             
-            .content-section {
-                padding: 10px;
+            .quick-info-grid {
+                grid-template-columns: 1fr;
             }
             
-            .quick-card {
-                padding: 12px;
-                gap: 8px;
+            .expense-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
-            
-            .timeline-card {
-                padding: 15px;
-                margin-bottom: 10px;
-            }
-            
-            .contact-card {
-                padding: 15px;
-            }
-            
-            .day-btn {
-                padding: 6px 12px;
-                min-width: 70px;
-            }
-        }
-        
-        /* Touch improvements */
-        .nav-tab, .day-btn, .floating-action {
-            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
-            touch-action: manipulation;
-        }
-        
-        /* Accordion styles for budget section */
-        details {
-            margin-bottom: 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        summary {
-            padding: 15px;
-            background: var(--light-gray);
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--indigo);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
-        }
-        
-        summary:hover {
-            background: var(--sakura);
-        }
-        
-        summary::-webkit-details-marker {
-            display: none;
-        }
-        
-        summary::after {
-            content: '▼';
-            transition: transform 0.3s ease;
-        }
-        
-        details[open] summary::after {
-            transform: rotate(-180deg);
-        }
-        
-        .accordion-content {
-            padding: 15px;
-            background: white;
-        }
-        
-        .price-breakdown {
-            margin-bottom: 10px;
-        }
-        
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--light-gray);
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-        }
-        
-        .price-item:last-child {
-            border-bottom: none;
-            font-weight: bold;
-            color: var(--indigo);
-            border-top: 2px solid var(--indigo);
-            padding-top: 12px;
-            margin-top: 8px;
-        }
-        
-        .price-category {
-            background: var(--light-gray);
-            padding: 10px;
-            border-radius: 6px;
-            margin-bottom: 8px;
-        }
-        
-        .price-category h4 {
-            color: var(--indigo);
-            margin-bottom: 8px;
-            font-size: clamp(0.9rem, 2.2vw, 1rem);
-        }
-        
-        .subcategory-item {
-            display: flex;
-            justify-content: space-between;
-            color: var(--gray);
-            font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-            margin-bottom: 3px;
         }
     </style>
 </head>
 <body>
-    <header class="app-header">
+    <div class="app-header">
         <div class="header-content">
-            <h1>Japan Trip 2025 🇯🇵</h1>
+            <h1>🇯🇵 Japan Journey 2025</h1>
+            <p style="font-size: 1.1em; opacity: 0.9;">Tokyo → Hakone → Mt. Fuji</p>
             <div class="countdown">
-                <div class="countdown-label">Departure countdown</div>
-                <div class="countdown-timer" id="countdown">Loading...</div>
+                <div class="countdown-label">Adventure begins in:</div>
+                <div class="countdown-timer" id="countdown">Calculating...</div>
             </div>
         </div>
-    </header>
+    </div>
 
-    <nav class="nav-tabs">
+    <div class="nav-tabs">
         <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
-        <button class="nav-tab" onclick="showSection('itinerary')">Itinerary</button>
-        <button class="nav-tab" onclick="showSection('accommodations')">Hotels</button>
-        <button class="nav-tab" onclick="showSection('budget')">Budget</button>
+        <button class="nav-tab" onclick="showSection('itinerary')">Daily Plan</button>
+        <button class="nav-tab" onclick="showSection('flights')">Flights</button>
+        <button class="nav-tab" onclick="showSection('hotels')">Hotels</button>
+        <button class="nav-tab" onclick="showSection('dining')">Dining</button>
+        <button class="nav-tab" onclick="showSection('expenses')">Budget</button>
         <button class="nav-tab" onclick="showSection('contacts')">Info</button>
-    </nav>
+    </div>
 
     <!-- Overview Section -->
     <div id="overview" class="content-section active">
         <div class="quick-info-grid">
             <div class="quick-card">
-                <div class="quick-icon">📅</div>
-                <div class="quick-text">
-                    <strong>Duration</strong><br>
-                    Dec 11-21, 2025 (10 days)
+                <div class="quick-icon">✈️</div>
+                <div>
+                    <div style="font-weight: 600;">Outbound Flight</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 11 - UA875</div>
+                    <div style="color: #666; font-size: 0.9em;">Business Class</div>
                 </div>
             </div>
             <div class="quick-card">
                 <div class="quick-icon">🏨</div>
-                <div class="quick-text">
-                    <strong>Accommodations</strong><br>
-                    5 unique stays
+                <div>
+                    <div style="font-weight: 600;">6 Hotels</div>
+                    <div style="color: #666; font-size: 0.9em;">9 Nights Total</div>
                 </div>
             </div>
             <div class="quick-card">
-                <div class="quick-icon">💰</div>
-                <div class="quick-text">
-                    <strong>Total Budget</strong><br>
-                    ¥528,476 / $3,523
+                <div class="quick-icon">🍽️</div>
+                <div>
+                    <div style="font-weight: 600;">Special Anniversary</div>
+                    <div style="color: #666; font-size: 0.9em;">Shintomi Kitafuku</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 13, 12:00 PM</div>
                 </div>
             </div>
             <div class="quick-card">
-                <div class="quick-icon">✈️</div>
-                <div class="quick-text">
-                    <strong>Departure</strong><br>
-                    LAX 10:15 AM
+                <div class="quick-icon">📅</div>
+                <div>
+                    <div style="font-weight: 600;">10 Days</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 11-21, 2025</div>
                 </div>
             </div>
         </div>
-        
+
         <div class="timeline-card">
-            <h2 style="margin-bottom: 20px; color: var(--indigo);">Trip Highlights</h2>
+            <h2 style="margin-bottom: 20px;">Trip Highlights</h2>
             <div style="display: grid; gap: 15px;">
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <span style="font-size: 2em;">🏔️</span>
+                    <span style="font-size: 1.5em;">🏙️</span>
                     <div>
-                        <strong>Mount Fuji Experience</strong><br>
-                        <span style="color: var(--gray);">HOSHINOYA Fuji - Luxury glamping with Mt. Fuji views</span>
+                        <strong>Tokyo (Dec 12-15)</strong> - HOSHINOYA & Palace Hotel, Premium Dining
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <span style="font-size: 2em;">♨️</span>
+                    <span style="font-size: 1.5em;">♨️</span>
                     <div>
-                        <strong>Traditional Ryokans</strong><br>
-                        <span style="color: var(--gray);">Gora Kadan & Gora Hanaougi in Hakone</span>
+                        <strong>Hakone (Dec 15-18)</strong> - Gora Kadan & Gora Hanaougi Ryokans
                     </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <span style="font-size: 2em;">🍣</span>
+                    <span style="font-size: 1.5em;">🗻</span>
                     <div>
-                        <strong>World-Class Dining</strong><br>
-                        <span style="color: var(--gray);">Michelin-starred experiences & traditional kaiseki</span>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                    <span style="font-size: 2em;">🧘</span>
-                    <div>
-                        <strong>Wellness & Relaxation</strong><br>
-                        <span style="color: var(--gray);">evian SPA TOKYO & natural hot springs</span>
+                        <strong>Mt. Fuji (Dec 18-21)</strong> - HOSHINOYA Fuji & Lake Views
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="timeline-card">
-            <h2 style="margin-bottom: 15px; color: var(--indigo);">Quick Trip Summary</h2>
-            <div style="display: grid; gap: 10px; font-size: 0.95em;">
-                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--light-gray);">
-                    <span><strong>Dec 11-12:</strong> Tokyo arrival & city exploration</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--light-gray);">
-                    <span><strong>Dec 13-15:</strong> HOSHINOYA Tokyo luxury stay</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--light-gray);">
-                    <span><strong>Dec 16-17:</strong> Hakone ryokan experience</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--light-gray);">
-                    <span><strong>Dec 18-20:</strong> Mt. Fuji glamping adventure</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
-                    <span><strong>Dec 21:</strong> Tokyo departure</span>
-                </div>
-            </div>
+            <h2 style="margin-bottom: 20px;">⚠️ Important Notes</h2>
+            <ul style="line-height: 1.8;">
+                <li><strong>Dec 17:</strong> Gora Hanaougi check-in by 18:00. Dinner slots: 18:00, 18:30, 19:00</li>
+                <li><strong>Dec 18:</strong> Make sure to figure out dinner times at each Ryokan </li>
+                <li><strong>Dec 19:</strong> Early morning canoeing at 06:50 AM</li>
+                <li><strong>Cancellation Policies:</strong> Many restaurants have strict 24-48hr policies</li>
+            </ul>
         </div>
     </div>
 
-    <!-- Itinerary Section -->
+    <!-- Daily Itinerary Section -->
     <div id="itinerary" class="content-section">
         <div class="day-selector">
-            <button class="day-btn active" onclick="showDay(1)">Day 1<br><small>Dec 11</small></button>
-            <button class="day-btn" onclick="showDay(2)">Day 2<br><small>Dec 12</small></button>
-            <button class="day-btn" onclick="showDay(3)">Day 3<br><small>Dec 13</small></button>
-            <button class="day-btn" onclick="showDay(4)">Day 4<br><small>Dec 14</small></button>
-            <button class="day-btn" onclick="showDay(5)">Day 5<br><small>Dec 15</small></button>
-            <button class="day-btn" onclick="showDay(6)">Day 6<br><small>Dec 16</small></button>
-            <button class="day-btn" onclick="showDay(7)">Day 7<br><small>Dec 17</small></button>
-            <button class="day-btn" onclick="showDay(8)">Day 8<br><small>Dec 18</small></button>
-            <button class="day-btn" onclick="showDay(9)">Day 9<br><small>Dec 19</small></button>
-            <button class="day-btn" onclick="showDay(10)">Day 10<br><small>Dec 20</small></button>
-            <button class="day-btn" onclick="showDay(11)">Day 11<br><small>Dec 21</small></button>
+            <button class="day-btn active" onclick="showDay(1)">Dec 11</button>
+            <button class="day-btn" onclick="showDay(2)">Dec 12</button>
+            <button class="day-btn" onclick="showDay(3)">Dec 13</button>
+            <button class="day-btn" onclick="showDay(4)">Dec 14</button>
+            <button class="day-btn" onclick="showDay(5)">Dec 15</button>
+            <button class="day-btn" onclick="showDay(6)">Dec 16</button>
+            <button class="day-btn" onclick="showDay(7)">Dec 17</button>
+            <button class="day-btn" onclick="showDay(8)">Dec 18</button>
+            <button class="day-btn" onclick="showDay(9)">Dec 19</button>
+            <button class="day-btn" onclick="showDay(10)">Dec 20</button>
+            <button class="day-btn" onclick="showDay(11)">Dec 21</button>
         </div>
 
-        <!-- Day 1: Dec 11 -->
+        <!-- Day 1 Content -->
         <div id="day1" class="day-content active">
             <div class="timeline-card">
-                <div class="time-badge">10:15 AM</div>
-                <div class="activity-title">✈️ Departure from LAX</div>
-                <div class="activity-description">Flight ANA 106 to Tokyo Haneda</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Dec 12, 3:15 PM JST</div>
-                <div class="activity-title">🛬 Arrive Tokyo Haneda</div>
-                <div class="activity-description">Immigration, customs, travel to city center</div>
+                <div class="time-badge">10:15 AM PST</div>
+                <div class="activity-title">✈️ Departure from SFO</div>
+                <div class="activity-description">
+                    UA875 - United Polaris Business Class<br>
+                    Seats: 2D & 2G (Jen & Rui)<br>
+                    Boeing 777-200 | Duration: 11h 35m<br>
+                    Confirmation: M2ZWZ0
+                </div>
             </div>
         </div>
 
-        <!-- Day 2: Dec 12 -->
+        <!-- Day 2 Content -->
         <div id="day2" class="day-content">
             <div class="timeline-card">
-                <div class="time-badge">Morning</div>
-                <div class="activity-title">🏨 Check-in to Hotel</div>
+                <div class="time-badge">2:50 PM JST</div>
+                <div class="activity-title">✈️ Arrival at Haneda Airport</div>
                 <div class="activity-description">
-                    <strong>HOTEL THE MITSUI KYOTO</strong><br>
-                    Luxury hotel in historic Kyoto setting<br>
-                    <em>Breakfast included</em>
+                    Welcome to Tokyo! Clear customs and immigration.
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">3:00 PM</div>
-                <div class="activity-title">🧘 evian SPA TOKYO</div>
-                <div class="activity-description">
-                    Relaxation and wellness experience<br>
-                    <strong>Cost:</strong> ¥40,000 / $267<br>
-                    <em>Arrive 60 minutes early, cancellation by 3pm day prior</em>
-                </div>
-            </div>
+            
             <div class="timeline-card">
                 <div class="time-badge">Evening</div>
-                <div class="activity-title">🍣 Dinner at Shintomi Kitafuku</div>
+                <div class="activity-title">🏨 Check-in HOSHINOYA Tokyo</div>
                 <div class="activity-description">
-                    Premium sushi experience<br>
-                    <strong>Cost:</strong> ¥72,600 / $484<br>
-                    <em>100% cancellation fee within 24hrs</em>
+                    Luxury ryokan in the heart of Tokyo<br>
+                    2 nights stay<br>
+                    <strong>Note: Dinner included at ryokan (6:00 PM)</strong>
                 </div>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍱</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Ryokan Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Venue:</div>
+                    <div class="res-value">HOSHINOYA Tokyo</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">6:00 PM (18:00)</div>
+                    <div class="res-label">Style:</div>
+                    <div class="res-value">Traditional Kaiseki</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">In-room or dining room</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">Included in accommodation</div>
+                </div>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍽️</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Late Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Restaurant:</div>
+                    <div class="res-value">Yakitori Hirano</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">9:30 PM (21:30)</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Premium Hanatsubaki Course</div>
+                    <div class="res-label">Price:</div>
+                    <div class="res-value">¥15,000 per person + 10% service</div>
+                    <div class="res-label">Confirmation:</div>
+                    <div class="res-value">CQU7XW3ZQS</div>
+                </div>
+                <a href="https://maps.google.com/?q=Yakitori+Hirano+Ginza+8-12-15" target="_blank" class="map-btn">
+                    📍 Navigate to Restaurant
+                </a>
             </div>
         </div>
 
-        <!-- Day 3: Dec 13 -->
+        <!-- Day 3 Content -->
         <div id="day3" class="day-content">
             <div class="timeline-card">
-                <div class="time-badge">Morning</div>
-                <div class="activity-title">🏨 Check-in to HOSHINOYA Tokyo</div>
+                <div class="time-badge">8:00 AM</div>
+                <div class="activity-title">🍳 Holistic Ryokan Breakfast</div>
                 <div class="activity-description">
-                    Luxury ryokan-style hotel in the city<br>
-                    <em>Breakfast included in stay</em>
+                    At HOSHINOYA Tokyo<br>
+                    ¥9,680 per person | Confirmation: 4018815
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">Evening</div>
-                <div class="activity-title">🥩 Teppanyaki GO</div>
-                <div class="activity-description">
-                    Premium teppanyaki experience<br>
-                    <strong>Options:</strong><br>
-                    • Matsusaka beef (tenderloin 100g/sirloin 120g): ¥32,000/person<br>
-                    • Kobe beef (tenderloin 100g/sirloin 120g): ¥43,000/person<br>
-                    <strong>Cost for 2:</strong> ¥64,000 - ¥86,000 / $427 - $573
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">✨</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Anniversary Lunch!</div>
+                    </div>
                 </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Restaurant:</div>
+                    <div class="res-value">Shintomi Kitafuku</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">12:00 PM (Noon)</div>
+                    <div class="res-label">Special Request:</div>
+                    <div class="res-value">Can we have 1 eel one uni? Wedding Anniversary</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Eel and live Matsuba crab course (winter)</div>
+                    <div class="res-label">Price:</div>
+                    <div class="res-value">¥99,000 per person + ¥19,800 service</div>
+                    <div class="res-label">Total:</div>
+                    <div class="res-value">¥217,800</div>
+                </div>
+                <a href="https://maps.google.com/?q=1-7-9+Shintomi+Nakazato+Building+1F" target="_blank" class="map-btn">
+                    📍 Navigate to Restaurant
+                </a>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍽️</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Dinner Reservation</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Restaurant:</div>
+                    <div class="res-value">Miyake Akira</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">7:00 PM (19:00)</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Seasonal Omakase (Caviar, eel, Matsuba crab, fugu)</div>
+                    <div class="res-label">Price:</div>
+                    <div class="res-value">¥33,880 per person + 10% service</div>
+                    <div class="res-label">Confirmation:</div>
+                    <div class="res-value">SYUEW8PEWM</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">2.5 hour stay limit</div>
+                </div>
+                <a href="https://maps.google.com/?q=Roppongi+3-8-12+JT+Building+1F" target="_blank" class="map-btn">
+                    📍 Navigate to Restaurant
+                </a>
             </div>
         </div>
 
-        <!-- Day 4: Dec 14 -->
+        <!-- Day 4 Content -->
         <div id="day4" class="day-content">
             <div class="timeline-card">
                 <div class="time-badge">Morning</div>
-                <div class="activity-title">🍱 Breakfast at Hotel</div>
-                <div class="activity-description">Included in HOSHINOYA Tokyo stay</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Day</div>
-                <div class="activity-title">🗼 Tokyo Exploration</div>
-                <div class="activity-description">Free day to explore Tokyo neighborhoods, shopping, culture</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Evening</div>
-                <div class="activity-title">🍽️ HOSHINOYA Tokyo Dining</div>
+                <div class="activity-title">🏨 Check-out HOSHINOYA Tokyo</div>
                 <div class="activity-description">
-                    Traditional kaiseki dinner<br>
-                    <strong>Cost:</strong> ¥56,000 / $373 (¥28,000 per person)<br>
-                    <em>Updated price - Dec 14 dinner</em>
+                    Transfer to Palace Hotel Tokyo
                 </div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="time-badge">3:00 PM</div>
+                <div class="activity-title">🏨 Check-in Palace Hotel Tokyo</div>
+                <div class="activity-description">
+                    1-1-1 Marunouchi, Chiyoda-ku<br>
+                    Tel: +81-3-3211-5211
+                </div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="time-badge">5:30 PM</div>
+                <div class="activity-title">💆‍♀️ evian SPA TOKYO</div>
+                <div class="activity-description">
+                    Prenatal Body Therapy 60min<br>
+                    Confirmation: 381232REV1<br>
+                    Arrive 60 minutes early<br>
+                    Use hotel guest elevators
+                </div>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍽️</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Anniversary Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Restaurant:</div>
+                    <div class="res-value">Teppanyaki Go - Palace Hotel Tokyo</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">7:00 PM (19:00)</div>
+                    <div class="res-label">Purpose:</div>
+                    <div class="res-value">Wedding Anniversary</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Kobe or Matsusaka beef (TBD)</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">Business casual dress code</div>
+                    <div class="res-label">Phone:</div>
+                    <div class="res-value">03-3211-5322</div>
+                </div>
+                <a href="https://maps.google.com/?q=Palace+Hotel+Tokyo+1-1-1+Marunouchi" target="_blank" class="map-btn">
+                    📍 Navigate to Restaurant
+                </a>
             </div>
         </div>
 
-        <!-- Day 5: Dec 15 -->
+        <!-- Day 5 Content -->
         <div id="day5" class="day-content">
             <div class="timeline-card">
                 <div class="time-badge">Morning</div>
-                <div class="activity-title">🍱 Breakfast at Hotel</div>
-                <div class="activity-description">Included in HOSHINOYA Tokyo stay</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">11:00 AM</div>
-                <div class="activity-title">🍣 Lunch at Miyake Akira</div>
+                <div class="activity-title">🏨 Travel to Hakone</div>
                 <div class="activity-description">
-                    Exclusive sushi counter experience<br>
-                    <strong>Cost:</strong> ¥55,000 / $367<br>
-                    <em>100% cancellation fee 3-5 days before</em>
+                    Check-out Palace Hotel<br>
+                    Journey to Hakone mountain resort area
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">Afternoon</div>
-                <div class="activity-title">🗾 Travel to Hakone</div>
-                <div class="activity-description">Journey to mountain resort area</div>
+
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-icon">🏨</div>
+                    <div>
+                        <div style="font-weight: 600;">Gora Kadan</div>
+                        <div style="color: #666; font-size: 0.9em;">Check-in Dec 15 (2 nights)</div>
+                    </div>
+                </div>
+                <div style="color: #666; margin-bottom: 10px;">
+                    1300 Gora, Hakone-machi, Kanagawa<br>
+                    Tel: 0460-82-3331
+                </div>
+                <a href="https://maps.google.com/?q=Gora+Kadan+1300+Gora+Hakone" target="_blank" class="map-btn">
+                    📍 Navigate
+                </a>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍱</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Ryokan Kaiseki Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Venue:</div>
+                    <div class="res-value">Gora Kadan</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">6:00 PM (18:00)</div>
+                    <div class="res-label">Style:</div>
+                    <div class="res-value">Traditional Multi-Course Kaiseki</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">Private dining room or in-room</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">Included in accommodation - Premium ryokan experience</div>
+                </div>
             </div>
         </div>
 
-        <!-- Day 6: Dec 16 -->
+        <!-- Day 6 Content -->
         <div id="day6" class="day-content">
             <div class="timeline-card">
-                <div class="time-badge">Morning</div>
-                <div class="activity-title">🏨 Check-in to Gora Kadan</div>
+                <div class="time-badge">All Day</div>
+                <div class="activity-title">♨️ Hakone Experience</div>
                 <div class="activity-description">
-                    Traditional luxury ryokan<br>
-                    <em>Breakfast and dinner included in stay</em>
+                    Enjoy onsen, explore Hakone<br>
+                    Day 2 at Gora Kadan
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">Day</div>
-                <div class="activity-title">♨️ Onsen & Relaxation</div>
-                <div class="activity-description">Enjoy hot springs and ryokan amenities</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Evening</div>
-                <div class="activity-title">🍱 Kaiseki Dinner</div>
-                <div class="activity-description">Traditional multi-course dinner included in ryokan stay</div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍱</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Ryokan Kaiseki Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Venue:</div>
+                    <div class="res-value">Gora Kadan</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">6:00 PM (18:00)</div>
+                    <div class="res-label">Style:</div>
+                    <div class="res-value">Traditional Multi-Course Kaiseki</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">Second night - Different seasonal menu from Day 1</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">Private dining room or in-room</div>
+                </div>
             </div>
         </div>
 
-        <!-- Day 7: Dec 17 -->
+        <!-- Day 7 Content -->
         <div id="day7" class="day-content">
             <div class="timeline-card">
-                <div class="time-badge">Morning</div>
-                <div class="activity-title">🍱 Breakfast at Ryokan</div>
-                <div class="activity-description">Traditional Japanese breakfast included in Gora Kadan stay</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Afternoon</div>
-                <div class="activity-title">🏨 Check-in to Gora Hanaougi</div>
+                <div class="time-badge">Before 6:00 PM</div>
+                <div class="activity-title">⚠️ Check-in Deadline</div>
                 <div class="activity-description">
-                    Another traditional ryokan experience<br>
-                    <em>Must check-in by 18:00</em><br>
-                    <em>Breakfast and dinner included in stay</em>
+                    Must check-in to Gora Hanaougi by 18:00<br>
+                    Dinner time slots: 18:00, 18:30, or 19:00
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">Evening</div>
-                <div class="activity-title">🍱 Kaiseki Dinner</div>
-                <div class="activity-description">Traditional dinner included in Gora Hanaougi stay</div>
+
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-icon">🏨</div>
+                    <div>
+                        <div style="font-weight: 600;">Gora Hanaougi Madoka no Mori</div>
+                        <div style="color: #666; font-size: 0.9em;">Check-in Dec 17 (1 night)</div>
+                    </div>
+                </div>
+                <div style="color: #666; margin-bottom: 10px;">
+                    1320-862 Gora, Hakone-machi, Kanagawa<br>
+                    Tel: 0460-82-4100<br>
+                    Confirmation: 6175866726
+                </div>
+                <a href="https://maps.google.com/?q=Gora+Hanaougi+1320-862+Gora+Hakone" target="_blank" class="map-btn">
+                    📍 Navigate
+                </a>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍱</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Ryokan Kaiseki Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Venue:</div>
+                    <div class="res-value">Gora Hanaougi Madoka no Mori</div>
+                    <div class="res-label">Time Options:</div>
+                    <div class="res-value">6:00 PM, 6:30 PM, or 7:00 PM (Choose at check-in)</div>
+                    <div class="res-label">Style:</div>
+                    <div class="res-value">Traditional Multi-Course Kaiseki</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">Private dining room</div>
+                    <div class="res-label">Special Notes:</div>
+                    <div class="res-value">Premium wagyu beef course available</div>
+                </div>
             </div>
         </div>
 
-        <!-- Day 8: Dec 18 -->
+        <!-- Day 8 Content -->
         <div id="day8" class="day-content">
             <div class="timeline-card">
                 <div class="time-badge">Morning</div>
-                <div class="activity-title">🍱 Breakfast at Ryokan</div>
-                <div class="activity-description">Traditional Japanese breakfast included in Gora Hanaougi stay</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Day</div>
-                <div class="activity-title">🏔️ Travel to Mt. Fuji</div>
-                <div class="activity-description">Journey to HOSHINOYA Fuji</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">Evening</div>
-                <div class="activity-title">🏨 HOSHINOYA Fuji</div>
+                <div class="activity-title">🗻 Travel to Mt. Fuji</div>
                 <div class="activity-description">
-                    Luxury glamping with Mt. Fuji views<br>
-                    <em>Note: Breakfast not included - we booked our own meals</em><br>
-                    <em>Verify which dinner reservation for Dec 18</em>
+                    Journey to HOSHINOYA Fuji
                 </div>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                    <strong>Option 1 (6:10 PM):</strong> Mountain Shabu-shabu Hotpot - ¥18,150 (serves 3)<br>
+                    Confirmation: 4017894<br><br>
+                    <strong>Option 2 (6:30 PM):</strong> Red Wine Sukiyaki Hot Pot - ¥18,150 (serves 3)<br>
+                    Confirmation: 4018707<br><br>
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-icon">🏨</div>
+                    <div>
+                        <div style="font-weight: 600;">HOSHINOYA Fuji</div>
+                        <div style="color: #666; font-size: 0.9em;">Check-in Dec 18 (2 nights)</div>
+                    </div>
+                </div>
+                <div style="color: #666; margin-bottom: 10px;">
+                    1408 Oishi, Fujikawaguchiko-machi, Yamanashi<br>
+                    Tel: +81-50-3134-8091
+                </div>
+                <a href="https://maps.google.com/?q=HOSHINOYA+Fuji+1408+Oishi+Fujikawaguchiko" target="_blank" class="map-btn">
+                    📍 Navigate
+                </a>
             </div>
         </div>
 
-        <!-- Day 9: Dec 19 -->
+        <!-- Day 9 Content -->
         <div id="day9" class="day-content">
             <div class="timeline-card">
-                <div class="time-badge">Morning</div>
+                <div class="time-badge">6:50 AM</div>
                 <div class="activity-title">🛶 Early Morning Canoeing</div>
                 <div class="activity-description">
-                    Lake adventure with Mt. Fuji views<br>
-                    <em>Max 180kg per canoe</em>
+                    Lake canoeing activity<br>
+                    2 rowers per canoe, max 180kg per canoe<br>
+                    ¥12,100 for 2 | Confirmation: 4017904
                 </div>
             </div>
+
             <div class="timeline-card">
-                <div class="time-badge">Afternoon</div>
-                <div class="activity-title">🍕 Forest Pizza Workshop</div>
+                <div class="time-badge">9:30 AM</div>
+                <div class="activity-title">🍱 Morning BOX</div>
                 <div class="activity-description">
-                    Outdoor cooking experience<br>
-                    <strong>Cost:</strong> ¥8,470 / $56<br>
-                    <em>Cannot accommodate food allergies</em>
+                    Breakfast box - ¥9,680 for 2<br>
+                    Confirmation: 4017906
                 </div>
             </div>
+
             <div class="timeline-card">
-                <div class="time-badge">Evening</div>
+                <div class="time-badge">1:45 PM</div>
+                <div class="activity-title">🚴 Electric Bicycle Tour</div>
+                <div class="activity-description">
+                    E-bike tour around Mt. Fuji area<br>
+                    ¥33,000 for 2 | Confirmation: 4017907<br>
+                    Participants: Jen (175cm), Rui (165cm)
+                </div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="time-badge">5:30 PM</div>
                 <div class="activity-title">🍽️ Dining Course Menu</div>
                 <div class="activity-description">
-                    HOSHINOYA Fuji signature dining<br>
-                    <strong>Cost:</strong> ¥24,200 / $161
+                    Chef's course menu dinner<br>
+                    ¥24,200 for 2 | Confirmation: 4017897
+                </div>
+            </div>
+
+            <div class="timeline-card">
+                <div class="time-badge">8:00 PM</div>
+                <div class="activity-title">💆 In-Room Shiatsu Massage</div>
+                <div class="activity-description">
+                    60 minutes for 2 people consecutively<br>
+                    One male and one female therapist<br>
+                    ¥29,040 for 2 | Confirmation: 4019911
                 </div>
             </div>
         </div>
 
-        <!-- Day 10: Dec 20 -->
+        <!-- Day 10 Content -->
         <div id="day10" class="day-content">
             <div class="timeline-card">
-                <div class="time-badge">Morning</div>
-                <div class="activity-title">🚴 E-bike Tour</div>
+                <div class="time-badge">7:30 AM</div>
+                <div class="activity-title">🍳 Grill Morning</div>
                 <div class="activity-description">
-                    Explore the area on electric bikes<br>
-                    <em>Min height 138cm (participants cleared)</em>
+                    Grilled breakfast at Fufu Kawaguchiko<br>
+                    ¥9,680 for 2 | Confirmation: 4017908
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">Day</div>
-                <div class="activity-title">🏨 Check-in to Fufu Kawaguchiko</div>
-                <div class="activity-description">
-                    Final night near Mt. Fuji<br>
-                    <em>Breakfast and dinner included</em>
-                </div>
-            </div>
+
             <div class="timeline-card">
                 <div class="time-badge">Morning</div>
-                <div class="activity-title">🍳 Grill Morning Breakfast</div>
+                <div class="activity-title">🏨 Check-out HOSHINOYA Fuji</div>
                 <div class="activity-description">
-                    Special breakfast experience<br>
-                    <strong>Cost:</strong> ¥9,680 / $65
+                    Transfer to Fufu Kawaguchiko
                 </div>
             </div>
-            <div class="timeline-card">
-                <div class="time-badge">Evening</div>
-                <div class="activity-title">🍱 Ryokan Dinner</div>
-                <div class="activity-description">Traditional dinner included in Fufu Kawaguchiko stay</div>
+
+             <div class="timeline-card">
+                <div class="time-badge">12:00 PM</div>
+                <div class="activity-title">🍕 Forest Pizza Workshop</div>
+                <div class="activity-description">
+                    Make your own pizza in the forest<br>
+                    Includes one drink - ¥8,470 for 2<br>
+                    Confirmation: 4018774
+                </div>
+            </div>
+
+            <div class="hotel-card">
+                <div class="hotel-header">
+                    <div class="hotel-icon">🏨</div>
+                    <div>
+                        <div style="font-weight: 600;">Fufu Kawaguchiko</div>
+                        <div style="color: #666; font-size: 0.9em;">Check-in Dec 20 (1 night)</div>
+                    </div>
+                </div>
+                <div style="color: #666; margin-bottom: 10px;">
+                    2211-1 Mizuguchi, Fuji-Kawaguchiko-Machi, Yamanashi<br>
+                    Tel: 0570-0117-22
+                </div>
+                <a href="https://maps.google.com/?q=Fufu+Kawaguchiko+2211-1+Mizuguchi" target="_blank" class="map-btn">
+                    📍 Navigate
+                </a>
+            </div>
+
+            <div class="reservation-alert">
+                <div class="reservation-header">
+                    <div class="alert-icon">🍱</div>
+                    <div>
+                        <div style="font-weight: 600; color: var(--indigo);">Ryokan Kaiseki Dinner</div>
+                    </div>
+                </div>
+                <div class="reservation-grid">
+                    <div class="res-label">Venue:</div>
+                    <div class="res-value">Fufu Kawaguchiko</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">6:00 PM (18:00)</div>
+                    <div class="res-label">Style:</div>
+                    <div class="res-value">Traditional Kaiseki with Mt. Fuji views</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">Private dining room overlooking Lake Kawaguchi</div>
+                    <div class="res-label">Special:</div>
+                    <div class="res-value">Last night celebration dinner</div>
+                </div>
             </div>
         </div>
 
-        <!-- Day 11: Dec 21 -->
+        <!-- Day 11 Content -->
         <div id="day11" class="day-content">
             <div class="timeline-card">
                 <div class="time-badge">Morning</div>
-                <div class="activity-title">🍱 Breakfast at Hotel</div>
-                <div class="activity-description">Included in Fufu Kawaguchiko stay</div>
+                <div class="activity-title">🏨 Check-out Fufu Kawaguchiko</div>
+                <div class="activity-description">
+                    Head to Haneda Airport
+                </div>
             </div>
+
             <div class="timeline-card">
-                <div class="time-badge">Day</div>
-                <div class="activity-title">🗾 Return to Tokyo</div>
-                <div class="activity-description">Travel back to Tokyo for departure</div>
-            </div>
-            <div class="timeline-card">
-                <div class="time-badge">11:40 PM</div>
-                <div class="activity-title">✈️ Departure from Haneda</div>
-                <div class="activity-description">Flight ANA 105 to LAX</div>
+                <div class="time-badge">10:55 PM JST</div>
+                <div class="activity-title">✈️ Return Flight</div>
+                <div class="activity-description">
+                    UA7939 - Operated by ANA<br>
+                    Economy Class - Seats: 41D & 41E<br>
+                    Boeing 777-300ER | Duration: 9h 25m<br>
+                    Arrive SFO: 3:20 PM (same day)<br>
+                    Confirmation: M2ZWZ0
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Accommodations Section -->
-    <div id="accommodations" class="content-section">
-        <div class="accommodation-item">
-            <h3>🏛️ HOTEL THE MITSUI KYOTO</h3>
-            <p><strong>Dates:</strong> Dec 12 (1 night)</p>
-            <p><strong>Style:</strong> Luxury hotel in historic setting</p>
-            <p><strong>Location:</strong> Kyoto</p>
-            <div class="breakfast-note">✅ Breakfast included</div>
+    <!-- Flights Section -->
+    <div id="flights" class="content-section">
+        <div class="timeline-card">
+            <h2 style="color: var(--indigo); margin-bottom: 20px;">✈️ Outbound Flight</h2>
+            <div class="reservation-grid">
+                <div class="res-label">Date:</div>
+                <div class="res-value">December 11, 2025</div>
+                <div class="res-label">Flight:</div>
+                <div class="res-value">UA875 - United Airlines</div>
+                <div class="res-label">Route:</div>
+                <div class="res-value">SFO → HND (Tokyo Haneda)</div>
+                <div class="res-label">Departure:</div>
+                <div class="res-value">10:15 AM PST</div>
+                <div class="res-label">Arrival:</div>
+                <div class="res-value">2:50 PM JST (Dec 12)</div>
+                <div class="res-label">Duration:</div>
+                <div class="res-value">11h 35m</div>
+                <div class="res-label">Class:</div>
+                <div class="res-value">United Polaris Business</div>
+                <div class="res-label">Seats:</div>
+                <div class="res-value">2D (Jen), 2G (Rui)</div>
+                <div class="res-label">Aircraft:</div>
+                <div class="res-value">Boeing 777-200</div>
+                <div class="res-label">Confirmation:</div>
+                <div class="res-value">M2ZWZ0</div>
+            </div>
         </div>
 
-        <div class="accommodation-item">
-            <h3>🏯 HOSHINOYA Tokyo</h3>
-            <p><strong>Dates:</strong> Dec 13-15 (2 nights)</p>
-            <p><strong>Style:</strong> Urban ryokan experience</p>
-            <p><strong>Location:</strong> Tokyo city center</p>
-            <div class="breakfast-note">✅ Breakfast included</div>
+        <div class="timeline-card">
+            <h2 style="color: var(--indigo); margin-bottom: 20px;">✈️ Return Flight</h2>
+            <div class="reservation-grid">
+                <div class="res-label">Date:</div>
+                <div class="res-value">December 21, 2025</div>
+                <div class="res-label">Flight:</div>
+                <div class="res-value">UA7939 - Operated by ANA</div>
+                <div class="res-label">Route:</div>
+                <div class="res-value">HND → SFO</div>
+                <div class="res-label">Departure:</div>
+                <div class="res-value">10:55 PM JST</div>
+                <div class="res-label">Arrival:</div>
+                <div class="res-value">3:20 PM PST (same day)</div>
+                <div class="res-label">Duration:</div>
+                <div class="res-value">9h 25m</div>
+                <div class="res-label">Class:</div>
+                <div class="res-value">Economy</div>
+                <div class="res-label">Seats:</div>
+                <div class="res-value">41D (Jen), 41E (Rui)</div>
+                <div class="res-label">Aircraft:</div>
+                <div class="res-value">Boeing 777-300ER</div>
+                <div class="res-label">Confirmation:</div>
+                <div class="res-value">M2ZWZ0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotels Section -->
+    <div id="hotels" class="content-section">
+        <div class="hotel-card" style="margin-bottom: 20px;">
+            <div class="hotel-header">
+                <div class="hotel-icon">🏨</div>
+                <div>
+                    <div style="font-weight: 600;">HOSHINOYA Tokyo</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 12-14 (2 nights)</div>
+                </div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;">
+                1-9-1 Otemachi, Chiyoda-ku, Tokyo 100-0004<br>
+                Tel: +81-50-3134-8091
+            </div>
+            <a href="https://maps.google.com/?q=HOSHINOYA+Tokyo+1-9-1+Otemachi" target="_blank" class="map-btn">
+                📍 Navigate
+            </a>
         </div>
 
-        <div class="accommodation-item">
-            <h3>♨️ Gora Kadan</h3>
-            <p><strong>Dates:</strong> Dec 16 (1 night)</p>
-            <p><strong>Style:</strong> Traditional luxury ryokan</p>
-            <p><strong>Location:</strong> Hakone</p>
-            <div class="breakfast-note">✅ Breakfast and dinner included</div>
+        <div class="hotel-card" style="margin-bottom: 20px;">
+            <div class="hotel-header">
+                <div class="hotel-icon">🏨</div>
+                <div>
+                    <div style="font-weight: 600;">Palace Hotel Tokyo</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 14-15 (1 night)</div>
+                </div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;">
+                1-1-1 Marunouchi, Chiyoda-ku, Tokyo 100-0005<br>
+                Tel: +81-3-3211-5211
+            </div>
+            <a href="https://maps.google.com/?q=Palace+Hotel+Tokyo+1-1-1+Marunouchi" target="_blank" class="map-btn">
+                📍 Navigate
+            </a>
         </div>
 
-        <div class="accommodation-item">
-            <h3>🌸 Gora Hanaougi</h3>
-            <p><strong>Dates:</strong> Dec 17 (1 night)</p>
-            <p><strong>Style:</strong> Traditional ryokan</p>
-            <p><strong>Location:</strong> Hakone</p>
-            <p><strong>Check-in:</strong> Must arrive by 18:00</p>
-            <div class="breakfast-note">✅ Breakfast and dinner included</div>
+        <div class="hotel-card" style="margin-bottom: 20px;">
+            <div class="hotel-header">
+                <div class="hotel-icon">🏨</div>
+                <div>
+                    <div style="font-weight: 600;">Gora Kadan</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 15-17 (2 nights)</div>
+                </div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;">
+                1300 Gora, Hakone-machi, Ashigarashimo-gun, Kanagawa<br>
+                Tel: 0460-82-3331
+            </div>
+            <a href="https://maps.google.com/?q=Gora+Kadan+1300+Gora+Hakone" target="_blank" class="map-btn">
+                📍 Navigate
+            </a>
         </div>
 
-        <div class="accommodation-item">
-            <h3>🏔️ HOSHINOYA Fuji</h3>
-            <p><strong>Dates:</strong> Dec 18-19 (2 nights)</p>
-            <p><strong>Style:</strong> Luxury glamping</p>
-            <p><strong>Location:</strong> Mt. Fuji area</p>
-            <p><strong>Special:</strong> Mt. Fuji views, outdoor activities</p>
-            <div class="breakfast-note" style="background: var(--sakura); color: var(--black);">⚠️ Breakfast NOT included - we booked our own meals</div>
+        <div class="hotel-card" style="margin-bottom: 20px;">
+            <div class="hotel-header">
+                <div class="hotel-icon">🏨</div>
+                <div>
+                    <div style="font-weight: 600;">Gora Hanaougi Madoka no Mori</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 17-18 (1 night)</div>
+                </div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;">
+                1320-862 Gora, Hakone-machi, Ashigarashimo-gun, Kanagawa<br>
+                Tel: 0460-82-4100<br>
+                Confirmation: 6175866726<br>
+                <strong>Note: Check-in by 18:00!</strong>
+            </div>
+            <a href="https://maps.google.com/?q=Gora+Hanaougi+1320-862+Gora+Hakone" target="_blank" class="map-btn">
+                📍 Navigate
+            </a>
         </div>
 
-        <div class="accommodation-item">
-            <h3>🗻 Fufu Kawaguchiko</h3>
-            <p><strong>Dates:</strong> Dec 20 (1 night)</p>
-            <p><strong>Style:</strong> Modern ryokan</p>
-            <p><strong>Location:</strong> Lake Kawaguchi, Mt. Fuji area</p>
-            <div class="breakfast-note">✅ Breakfast and dinner included</div>
+        <div class="hotel-card" style="margin-bottom: 20px;">
+            <div class="hotel-header">
+                <div class="hotel-icon">🏨</div>
+                <div>
+                    <div style="font-weight: 600;">HOSHINOYA Fuji</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 18-20 (2 nights)</div>
+                </div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;">
+                1408 Oishi, Fujikawaguchiko-machi, Yamanashi 401-0305<br>
+                Tel: +81-50-3134-8091
+            </div>
+            <a href="https://maps.google.com/?q=HOSHINOYA+Fuji+1408+Oishi" target="_blank" class="map-btn">
+                📍 Navigate
+            </a>
+        </div>
+
+        <div class="hotel-card">
+            <div class="hotel-header">
+                <div class="hotel-icon">🏨</div>
+                <div>
+                    <div style="font-weight: 600;">Fufu Kawaguchiko</div>
+                    <div style="color: #666; font-size: 0.9em;">Dec 20-21 (1 night)</div>
+                </div>
+            </div>
+            <div style="color: #666; margin-bottom: 10px;">
+                2211-1 Mizuguchi, Fuji-Kawaguchiko-Machi, Yamanashi 401-0304<br>
+                Tel: 0570-0117-22
+            </div>
+            <a href="https://maps.google.com/?q=Fufu+Kawaguchiko+2211-1+Mizuguchi" target="_blank" class="map-btn">
+                📍 Navigate
+            </a>
+        </div>
+    </div>
+
+    <!-- Dining Section -->
+    <div id="dining" class="content-section">
+        <div class="reservation-alert" style="margin-bottom: 20px;">
+            <h2 style="color: var(--indigo); margin-bottom: 20px;">🍽️ Restaurant Reservations</h2>
+            
+            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="color: var(--indigo); margin-bottom: 10px;">Yakitori Hirano</h3>
+                <div class="reservation-grid">
+                    <div class="res-label">Date:</div>
+                    <div class="res-value">December 12, 2025</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">9:30 PM (21:30)</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">Ginza 8-12-15, Zenkoku Nenryo Kaikan 1F</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Premium Hanatsubaki Course</div>
+                    <div class="res-label">Price:</div>
+                    <div class="res-value">¥15,000 per person + 10% service</div>
+                    <div class="res-label">Total:</div>
+                    <div class="res-value">¥33,000</div>
+                    <div class="res-label">Confirmation:</div>
+                    <div class="res-value">CQU7XW3ZQS</div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #FFF9E6, var(--sakura)); padding: 20px; border-radius: 8px; margin-bottom: 15px; border: 2px solid var(--gold);">
+                <h3 style="color: var(--indigo); margin-bottom: 10px;">✨ Shintomi Kitafuku - Anniversary Lunch</h3>
+                <div class="reservation-grid">
+                    <div class="res-label">Date:</div>
+                    <div class="res-value">December 13, 2025</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">12:00 PM (Noon)</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">1-7-9 Shintomi, Nakazato Building 1F</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Eel and live Matsuba crab course (winter)</div>
+                    <div class="res-label">Special Request:</div>
+                    <div class="res-value">Wedding Anniversary - Can we have 1 eel, one uni?</div>
+                    <div class="res-label">Price:</div>
+                    <div class="res-value">¥99,000 per person + ¥19,800 service</div>
+                    <div class="res-label">Total:</div>
+                    <div class="res-value">¥217,800</div>
+                    <div class="res-label">Cancellation:</div>
+                    <div class="res-value">100% fee within 24hrs</div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="color: var(--indigo); margin-bottom: 10px;">Miyake Akira</h3>
+                <div class="reservation-grid">
+                    <div class="res-label">Date:</div>
+                    <div class="res-value">December 13, 2025</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">7:00 PM (19:00)</div>
+                    <div class="res-label">Location:</div>
+                    <div class="res-value">Roppongi 3-8-12, JT Building 1F</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Seasonal Omakase (Caviar, eel, Matsuba crab, fugu)</div>
+                    <div class="res-label">Price:</div>
+                    <div class="res-value">¥33,880 per person + 10% service</div>
+                    <div class="res-label">Total:</div>
+                    <div class="res-value">¥74,536</div>
+                    <div class="res-label">Confirmation:</div>
+                    <div class="res-value">SYUEW8PEWM</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">2.5 hour stay limit, 100% cancellation fee 3-5 days before</div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <h3 style="color: var(--indigo); margin-bottom: 10px;">Teppanyaki Go - Palace Hotel</h3>
+                <div class="reservation-grid">
+                    <div class="res-label">Date:</div>
+                    <div class="res-value">December 14, 2025</div>
+                    <div class="res-label">Time:</div>
+                    <div class="res-value">7:00 PM (19:00)</div>
+                    <div class="res-label">Purpose:</div>
+                    <div class="res-value">Wedding Anniversary</div>
+                    <div class="res-label">Course:</div>
+                    <div class="res-value">Kobe or Matsusaka beef (TBD)</div>
+                    <div class="res-label">Note:</div>
+                    <div class="res-value">Business casual dress code</div>
+                </div>
+            </div>
+
+            <div style="background: white; padding: 20px; border-radius: 8px;">
+                <h3 style="color: var(--indigo); margin-bottom: 10px;">Hotel & Ryokan Dining</h3>
+                <ul style="line-height: 1.8;">
+                    <li><strong>Dec 12:</strong> HOSHINOYA Tokyo - Ryokan dinner included (6:00 PM)</li>
+                    <li><strong>Dec 13:</strong> HOSHINOYA Tokyo - Holistic Ryokan Breakfast (8:00 AM, ¥19,360)</li>
+                    <li><strong>Dec 15:</strong> Gora Kadan - Ryokan dinner included (6:00 PM)</li>
+                    <li><strong>Dec 16:</strong> Gora Kadan - Ryokan dinner included (6:00 PM)</li>
+                    <li><strong>Dec 17:</strong> Gora Hanaougi - Ryokan dinner included (6:00/6:30/7:00 PM slot)</li>
+                    <li><strong>Dec 18:</strong> HOSHINOYA Fuji - Room Service Dinner (¥18,150) - VERIFY WHICH</li>
+                    <li><strong>Dec 19:</strong> Morning BOX (¥9,680), Pizza Workshop (¥8,470), Dining Course (¥24,200)</li>
+                    <li><strong>Dec 20:</strong> Fufu Kawaguchiko - Ryokan dinner included (6:00 PM)</li>
+                    <li><strong>Dec 20:</strong> Fufu Kawaguchiko - Grill Morning breakfast (7:30 AM, ¥9,680)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Detailed Budget Breakdown Accordion -->
+        <div class="expense-tracker">
+            <h2 style="color: var(--indigo); margin-bottom: 20px;">💴 Detailed Dining Budget</h2>
+            
+            <details style="margin-bottom: 20px;">
+                <summary style="cursor: pointer; padding: 15px; background: var(--sakura); border-radius: 8px; font-weight: 600; color: var(--indigo);">
+                    Click to view detailed breakdown ▼
+                </summary>
+                
+                <div style="padding: 20px; margin-top: 10px;">
+                    <h4 style="color: var(--indigo); margin-bottom: 15px;">Restaurants (Pay on Arrival)</h4>
+                    
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Yakitori Hirano</strong> (Dec 12)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Premium Hanatsubaki Course × 2 + 10% service</span>
+                            <span>¥33,000 / $220</span>
+                        </div>
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, #FFF9E6, var(--sakura)); padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid var(--gold);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>✨ Shintomi Kitafuku</strong> (Dec 13 - Anniversary)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Special eel & crab course × 2 + service</span>
+                            <span>¥217,800 / $1,452</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Miyake Akira</strong> (Dec 13)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Seasonal Omakase × 2 + 10% service</span>
+                            <span>¥74,536 / $497</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Teppanyaki Go</strong> (Dec 14)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Kobe/Matsusaka beef course</span>
+                            <span>TBD</span>
+                        </div>
+                    </div>
+
+                    <h4 style="color: var(--indigo); margin: 20px 0 15px;">Hotel Dining (Pay at Hotel)</h4>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>HOSHINOYA Tokyo</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Holistic Ryokan Breakfast (Dec 13)</span>
+                            <span>¥19,360 / $129</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Ryokan dinner × 1 night (Dec 12)</span>
+                            <span>Included in stay</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>HOSHINOYA Fuji</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Room Service Dinner (Dec 18)</span>
+                            <span>¥18,150 / $121</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Morning BOX (Dec 19)</span>
+                            <span>¥9,680 / $65</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Forest Pizza Workshop (Dec 19)</span>
+                            <span>¥8,470 / $56</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Dining Course Menu (Dec 19)</span>
+                            <span>¥24,200 / $161</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Fufu Kawaguchiko</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Grill Morning Breakfast (Dec 20)</span>
+                            <span>¥9,680 / $65</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Ryokan dinner (Dec 20)</span>
+                            <span>Included in stay</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Other Ryokans</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Gora Kadan dinners × 2 nights</span>
+                            <span>Included in stay</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Gora Hanaougi dinner × 1 night</span>
+                            <span>Included in stay</span>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 2px solid var(--indigo); padding-top: 15px;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2em; color: var(--indigo);">
+                            <span>Total Dining Budget</span>
+                            <span>¥475,026 / $3,167</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px; color: var(--gray);">
+                            <span>Exchange Rate</span>
+                            <span>¥150 = $1 USD</span>
+                        </div>
+                    </div>
+                </div>
+            </details>
         </div>
     </div>
 
     <!-- Budget Section -->
-    <div id="budget" class="content-section">
-        <div class="timeline-card">
-            <h2 style="margin-bottom: 20px; color: var(--indigo);">💰 Complete Budget Breakdown</h2>
+    <div id="expenses" class="content-section">
+        <div class="expense-tracker">
+            <div class="expense-header">
+                <h2>💴 Trip Budget</h2>
+                <div class="expense-total">$3,997+</div>
+            </div>
             
-            <details open>
-                <summary>
-                    <span>🍽️ Dining Expenses</span>
-                    <span>¥383,950 / $2,560</span>
+            <div class="expense-item">
+                <span class="expense-category">✈️ Flights (All Paid)</span>
+                <span class="expense-amount">All Paid</span>
+            </div>
+            
+            <div class="expense-item">
+                <span class="expense-category">🏨 Hotels</span>
+                <span class="expense-amount">All Paid</span>
+            </div>
+            
+            <div class="expense-item">
+                <span class="expense-category">🍽️ Dining (Restaurants)</span>
+                <span class="expense-amount">$2,169</span>
+            </div>
+            
+            <div class="expense-item">
+                <span class="expense-category">🍱 Dining (Hotel/Ryokan)</span>
+                <span class="expense-amount">$998</span>
+            </div>
+            
+            <div class="expense-item">
+                <span class="expense-category">🎌 Activities & Spa</span>
+                <span class="expense-amount">$636</span>
+            </div>
+            
+            <div class="expense-item">
+                <span class="expense-category">💆 In-Room Massage</span>
+                <span class="expense-amount">$194</span>
+            </div>
+        </div>
+
+        <div class="timeline-card">
+            <h3 style="color: var(--indigo); margin-bottom: 15px;">Payment Status</h3>
+            <ul style="line-height: 1.8;">
+                <li><strong>Paid:</strong> All flights (Visa 4270)</li>
+                <li><strong>Pay on Arrival:</strong> All restaurants, activities, and spa treatments</li>
+                <li><strong>Pending:</strong> Hotel charges (prices TBD)</li>
+                <li><strong>Included:</strong> Ryokan dinners at HOSHINOYA Tokyo, Gora Kadan, Gora Hanaougi, and Fufu Kawaguchiko</li>
+            </ul>
+        </div>
+
+        <div class="timeline-card">
+            <h3 style="color: var(--indigo); margin-bottom: 15px;">Exchange Rate Reference</h3>
+            <ul style="line-height: 1.8;">
+                <li><strong>Current Rate:</strong> ¥150 = $1 USD (approx.)</li>
+                <li><strong>Quick Reference:</strong></li>
+                <li>¥1,000 = $6.67</li>
+                <li>¥10,000 = $66.67</li>
+                <li>¥100,000 = $666.67</li>
+            </ul>
+        </div>
+
+         <!-- Detailed Budget Breakdown Accordion -->
+        <div class="expense-tracker">
+            <h2 style="color: var(--indigo); margin-bottom: 20px;">💴 Detailed Dining Budget</h2>
+            
+            <details style="margin-bottom: 20px;">
+                <summary style="cursor: pointer; padding: 15px; background: var(--sakura); border-radius: 8px; font-weight: 600; color: var(--indigo);">
+                    Click to view detailed breakdown ▼
                 </summary>
-                <div class="accordion-content">
-                    <div class="price-category">
-                        <h4>Tokyo Dining</h4>
-                        <div class="subcategory-item">
-                            <span>Shintomi Kitafuku (Dec 12)</span>
-                            <span>¥72,600 / $484</span>
+                
+                <div style="padding: 20px; margin-top: 10px;">
+                    <h4 style="color: var(--indigo); margin-bottom: 15px;">Restaurants (Pay on Arrival)</h4>
+                    
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Yakitori Hirano</strong> (Dec 12)</span>
                         </div>
-                        <div class="subcategory-item">
-                            <span>Teppanyaki GO (Dec 13) - Matsusaka beef × 2</span>
-                            <span>¥64,000 / $427</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>HOSHINOYA Tokyo meal (Dec 14)</span>
-                            <span>¥56,000 / $373</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Miyake Akira (Dec 15)</span>
-                            <span>¥55,000 / $367</span>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Premium Hanatsubaki Course × 2 + 10% service</span>
+                            <span>¥33,000 / $220</span>
                         </div>
                     </div>
-                    
-                    <div class="price-category">
-                        <h4>Mt. Fuji Area Dining</h4>
-                        <div class="subcategory-item">
+
+                    <div style="background: linear-gradient(135deg, #FFF9E6, var(--sakura)); padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid var(--gold);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>✨ Shintomi Kitafuku</strong> (Dec 13 - Anniversary)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Special eel & crab course × 2 + service</span>
+                            <span>¥217,800 / $1,452</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Miyake Akira</strong> (Dec 13)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Seasonal Omakase × 2 + 10% service</span>
+                            <span>¥74,536 / $497</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Teppanyaki Go</strong> (Dec 14)</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Kobe/Matsusaka beef course</span>
+                            <span>TBD</span>
+                        </div>
+                    </div>
+
+                    <h4 style="color: var(--indigo); margin: 20px 0 15px;">Hotel Dining (Pay at Hotel)</h4>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>HOSHINOYA Tokyo</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Holistic Ryokan Breakfast (Dec 13)</span>
+                            <span>¥19,360 / $129</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Ryokan dinner × 1 night (Dec 12)</span>
+                            <span>Included in stay</span>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>HOSHINOYA Fuji</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Room Service Dinner (Dec 18)</span>
+                            <span>¥18,150 / $121</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Morning BOX (Dec 19)</span>
+                            <span>¥9,680 / $65</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
                             <span>Forest Pizza Workshop (Dec 19)</span>
                             <span>¥8,470 / $56</span>
                         </div>
-                        <div class="subcategory-item">
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
                             <span>Dining Course Menu (Dec 19)</span>
                             <span>¥24,200 / $161</span>
                         </div>
-                        <div class="subcategory-item">
+                    </div>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Fufu Kawaguchiko</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
                             <span>Grill Morning Breakfast (Dec 20)</span>
                             <span>¥9,680 / $65</span>
                         </div>
-                    </div>
-                    
-                    <div class="price-category">
-                        <h4>Included in Accommodations</h4>
-                        <div class="subcategory-item">
-                            <span>Gora Kadan dinners (2 nights)</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Gora Hanaougi dinner (1 night)</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Fufu Kawaguchiko dinner (1 night)</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>All ryokan breakfasts</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>HOSHINOYA Tokyo breakfasts (2 days)</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Hotel Mitsui Kyoto breakfast</span>
-                            <span>Included</span>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Ryokan dinner (Dec 20)</span>
+                            <span>Included in stay</span>
                         </div>
                     </div>
-                    
-                    <div class="price-item">
-                        <span><strong>Total Dining Expenses</strong></span>
-                        <span><strong>¥383,950 / $2,560</strong></span>
+
+                    <div style="background: var(--light-gray); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                            <span><strong>Other Ryokans</strong></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em; margin-bottom: 5px;">
+                            <span>Gora Kadan dinners × 2 nights</span>
+                            <span>Included in stay</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; color: var(--gray); font-size: 0.9em;">
+                            <span>Gora Hanaougi dinner × 1 night</span>
+                            <span>Included in stay</span>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 2px solid var(--indigo); padding-top: 15px;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2em; color: var(--indigo);">
+                            <span>Total Dining Budget</span>
+                            <span>¥475,026 / $3,167</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px; color: var(--gray);">
+                            <span>Exchange Rate</span>
+                            <span>¥150 = $1 USD</span>
+                        </div>
                     </div>
                 </div>
             </details>
-
-            <details>
-                <summary>
-                    <span>🧘 Wellness & Activities</span>
-                    <span>¥40,000 / $267</span>
-                </summary>
-                <div class="accordion-content">
-                    <div class="price-category">
-                        <h4>Spa & Wellness</h4>
-                        <div class="subcategory-item">
-                            <span>evian SPA TOKYO (Dec 12)</span>
-                            <span>¥40,000 / $267</span>
-                        </div>
-                    </div>
-                    
-                    <div class="price-category">
-                        <h4>Included Activities</h4>
-                        <div class="subcategory-item">
-                            <span>Early Morning Canoeing</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>E-bike Tour</span>
-                            <span>Included</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Ryokan activities & amenities</span>
-                            <span>Included</span>
-                        </div>
-                    </div>
-                    
-                    <div class="price-item">
-                        <span><strong>Total Wellness & Activities</strong></span>
-                        <span><strong>¥40,000 / $267</strong></span>
-                    </div>
-                </div>
-            </details>
-
-            <details>
-                <summary>
-                    <span>🏨 Accommodation Costs</span>
-                    <span>¥104,526 / $697</span>
-                </summary>
-                <div class="accordion-content">
-                    <div class="price-category">
-                        <h4>Hotel & Ryokan Stays</h4>
-                        <div class="subcategory-item">
-                            <span>HOTEL THE MITSUI KYOTO (1 night)</span>
-                            <span>¥15,000 / $100</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>HOSHINOYA Tokyo (2 nights)</span>
-                            <span>¥35,000 / $233</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Gora Kadan (1 night)</span>
-                            <span>¥18,000 / $120</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Gora Hanaougi (1 night)</span>
-                            <span>¥16,000 / $107</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>HOSHINOYA Fuji (2 nights)</span>
-                            <span>¥12,526 / $84</span>
-                        </div>
-                        <div class="subcategory-item">
-                            <span>Fufu Kawaguchiko (1 night)</span>
-                            <span>¥8,000 / $53</span>
-                        </div>
-                    </div>
-                    
-                    <div class="price-item">
-                        <span><strong>Total Accommodation Costs</strong></span>
-                        <span><strong>¥104,526 / $697</strong></span>
-                    </div>
-                </div>
-            </details>
-
-            <div style="background: var(--indigo); color: white; padding: 20px; border-radius: 12px; margin-top: 15px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.3em; font-weight: bold; margin-bottom: 10px;">
-                    <span>🇯🇵 Grand Total</span>
-                    <span>¥528,476 / $3,523</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; opacity: 0.9; font-size: 0.95em;">
-                    <span>Exchange Rate Used</span>
-                    <span>¥150 = $1 USD</span>
-                </div>
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 0.9em;">
-                    <p><strong>Note:</strong> Many meals are included in ryokan stays. This budget covers all confirmed reservations and experiences.</p>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -1151,7 +1732,6 @@
                 <li>Early Morning Canoeing: Max 180kg per canoe</li>
                 <li>Forest Pizza: Cannot accommodate food allergies</li>
                 <li>E-bike Tour: Min height 138cm (participants cleared)</li>
-                <li><strong>Breakfast Info:</strong> All ryokans include breakfast except HOSHINOYA Fuji (we booked our own meals)</li>
             </ul>
         </div>
 
@@ -1233,7 +1813,7 @@
             event.target.classList.add('active');
         }
 
-        // Quick actions with mobile optimization
+        // Quick actions
         function quickActions() {
             const actions = [
                 '📞 Emergency Contacts',
@@ -1263,26 +1843,6 @@
             }
         }
 
-        // Touch and mobile optimizations
-        document.addEventListener('DOMContentLoaded', function() {
-            // Prevent zoom on input focus (iOS)
-            const metaViewport = document.querySelector('meta[name=viewport]');
-            if (metaViewport) {
-                metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0');
-            }
-            
-            // Add touch feedback for buttons
-            const buttons = document.querySelectorAll('.nav-tab, .day-btn, .floating-action');
-            buttons.forEach(button => {
-                button.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.95)';
-                });
-                button.addEventListener('touchend', function() {
-                    this.style.transform = '';
-                });
-            });
-        });
-
         // Add offline support
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -1297,7 +1857,7 @@
         // Save to localStorage for offline access
         localStorage.setItem('japanTrip2025', JSON.stringify({
             lastUpdated: new Date().toISOString(),
-            dataVersion: '2.0'
+            dataVersion: '1.0'
         }));
     </script>
 </body>
