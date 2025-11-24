@@ -1,35 +1,6 @@
 # Japan Trip 2025 - Interactive Itinerary
 
-A React-based interactive itinerary planner for a 10-day journey through Japan (Tokyo → Hakone → Mt. Fuji), December 11-21, 2025.
-
-## Features
-
-- **Live Countdown Timer**: Real-time countdown to trip departure
-- **Interactive Navigation**: Tab-based navigation between different sections
-- **Daily Itinerary**: Day-by-day breakdown with detailed activities, reservations, and notes
-- **Flight Information**: Complete flight details for outbound and return trips
-- **Hotel Listings**: All accommodation details with Google Maps integration
-- **Dining Reservations**: Restaurant bookings with confirmations and special notes
-- **Budget Tracker**: Trip expenses and payment status
-- **Important Info**: Emergency contacts, weather forecasts, and travel notes
-- **Quick Actions**: Floating button for emergency contacts, maps, currency converter, and weather
-- **Offline Support**: LocalStorage integration for offline access
-- **Responsive Design**: Mobile-friendly interface with smooth animations
-
-## Tech Stack
-
-- **React 18** - UI framework
-- **Vite** - Build tool and dev server
-- **CSS3** - Styling with custom design system
-- **Google Fonts** - Noto Serif JP & Cormorant Garamond
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
+test app for fun!
 ### Installation
 
 ```bash
