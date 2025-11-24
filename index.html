@@ -502,20 +502,148 @@
             .nav-tabs {
                 top: 140px;
             }
-            
+
             .quick-info-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .expense-header {
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
             }
         }
+
+        /* Security Password Overlay */
+        .security-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--indigo) 0%, #1e2936 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .security-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .password-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-container h2 {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--indigo);
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .password-container p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.5em;
+            text-align: center;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5em;
+            font-family: 'Courier New', monospace;
+            transition: border-color 0.3s ease;
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: var(--indigo);
+        }
+
+        .password-input.error {
+            border-color: #ef4444;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .unlock-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--indigo);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .unlock-btn:hover {
+            background: #1e2936;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .unlock-btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.9em;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        .lock-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
+    <!-- Security Password Overlay -->
+    <div id="securityOverlay" class="security-overlay">
+        <div class="password-container">
+            <div class="lock-icon">🔒</div>
+            <h2>Secure Access</h2>
+            <p>Enter 6-digit password to continue</p>
+            <input
+                type="password"
+                id="passwordInput"
+                class="password-input"
+                maxlength="6"
+                placeholder="••••••"
+                autocomplete="off"
+            />
+            <button id="unlockBtn" class="unlock-btn">Unlock</button>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+
     <div class="app-header">
         <div class="header-content">
             <h1>🇯🇵 Japan Journey 2025</h1>
@@ -1872,6 +2000,75 @@
     </div>
 
     <script>
+        // Security Password Check
+        (function() {
+            const CORRECT_PASSWORD = 'jr0929';
+            const overlay = document.getElementById('securityOverlay');
+            const passwordInput = document.getElementById('passwordInput');
+            const unlockBtn = document.getElementById('unlockBtn');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Check if already authenticated in this session
+            const isAuthenticated = sessionStorage.getItem('authenticated');
+            if (isAuthenticated === 'true') {
+                overlay.classList.add('hidden');
+                return;
+            }
+
+            // Focus on password input when page loads
+            passwordInput.focus();
+
+            // Handle password verification
+            function verifyPassword() {
+                const enteredPassword = passwordInput.value.trim();
+
+                if (enteredPassword.length !== 6) {
+                    showError('Password must be 6 digits');
+                    return;
+                }
+
+                if (enteredPassword === CORRECT_PASSWORD) {
+                    // Correct password
+                    sessionStorage.setItem('authenticated', 'true');
+                    overlay.classList.add('hidden');
+                    errorMessage.textContent = '';
+                    passwordInput.classList.remove('error');
+                } else {
+                    // Wrong password
+                    showError('Incorrect password');
+                    passwordInput.classList.add('error');
+                    passwordInput.value = '';
+                    passwordInput.focus();
+
+                    // Remove error animation class after animation completes
+                    setTimeout(() => {
+                        passwordInput.classList.remove('error');
+                    }, 500);
+                }
+            }
+
+            function showError(message) {
+                errorMessage.textContent = message;
+                setTimeout(() => {
+                    errorMessage.textContent = '';
+                }, 3000);
+            }
+
+            // Event listeners
+            unlockBtn.addEventListener('click', verifyPassword);
+
+            passwordInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    verifyPassword();
+                }
+            });
+
+            // Only allow numeric input for password
+            passwordInput.addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        })();
+
         // Countdown Timer
         function updateCountdown() {
             const tripDate = new Date('2025-12-11T10:15:00-08:00');
