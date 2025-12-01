@@ -88,57 +88,24 @@
         updateCountdown();
         setInterval(updateCountdown, 60000);
 
-        // Cache for loaded sections
-        const sectionCache = {};
-
-        // Map section names to their partial files
-        const sectionFiles = {
-            'overview': 'partials/overview.html',
-            'itinerary': 'partials/itinerary.html',
-            'flights': 'partials/flights.html',
-            'hotels': 'partials/hotels.html',
-            'dining': 'partials/dining.html',
-            'expenses': 'partials/expenses.html',
-            'contacts': 'partials/contacts.html'
-        };
-
         // Navigation functions
-        async function showSection(sectionName) {
+        function showSection(sectionName) {
             // Hide all sections
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
-
-            // Get the section element
-            const sectionElement = document.getElementById(sectionName);
-
-            // Load section content if not cached
-            if (!sectionCache[sectionName]) {
-                try {
-                    const response = await fetch(sectionFiles[sectionName]);
-                    if (!response.ok) {
-                        throw new Error(`Failed to load ${sectionName}`);
-                    }
-                    const html = await response.text();
-                    sectionElement.innerHTML = html;
-                    sectionCache[sectionName] = true;
-                } catch (error) {
-                    console.error('Error loading section:', error);
-                    sectionElement.innerHTML = '<div class="timeline-card"><p style="color: red;">Error loading content. Please refresh the page.</p></div>';
-                }
-            }
-
+            
             // Show selected section
-            sectionElement.classList.add('active');
-
+            document.getElementById(sectionName).classList.add('active');
+            
             // Update nav tabs
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
-
+            
             // Scroll to top
             window.scrollTo(0, 0);
         }
@@ -208,34 +175,3 @@
             lastUpdated: new Date().toISOString(),
             dataVersion: '1.0'
         }));
-
-        // Initialize: Load the overview section on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load the default section (overview) after authentication
-            const checkAuth = setInterval(function() {
-                const isAuthenticated = sessionStorage.getItem('authenticated');
-                if (isAuthenticated === 'true') {
-                    clearInterval(checkAuth);
-                    loadSection('overview');
-                }
-            }, 100);
-        });
-
-        // Helper function to load a section without event handling
-        async function loadSection(sectionName) {
-            const sectionElement = document.getElementById(sectionName);
-            if (!sectionCache[sectionName] && sectionElement) {
-                try {
-                    const response = await fetch(sectionFiles[sectionName]);
-                    if (!response.ok) {
-                        throw new Error(`Failed to load ${sectionName}`);
-                    }
-                    const html = await response.text();
-                    sectionElement.innerHTML = html;
-                    sectionCache[sectionName] = true;
-                } catch (error) {
-                    console.error('Error loading section:', error);
-                    sectionElement.innerHTML = '<div class="timeline-card"><p style="color: red;">Error loading content. Please refresh the page.</p></div>';
-                }
-            }
-        }
